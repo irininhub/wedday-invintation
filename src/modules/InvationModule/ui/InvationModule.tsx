@@ -5,6 +5,7 @@ import {
     SubmitButton,
     UserForm,
     ModalComponent,
+    InvintationHeader,
 } from "../../../component";
 import { Container, Form } from "react-bootstrap";
 import { EStatusInvation, InputsType } from "../../../types";
@@ -61,6 +62,9 @@ export const InvationModule: FC = () => {
             );
             methods.setValue("persons", fields);
             methods.setValue("docId", family.docId as string);
+            updateFamily(family.docId as string, {
+                status: EStatusInvation.VIEWED,
+            });
         }
     }, [family]);
 
@@ -72,11 +76,12 @@ export const InvationModule: FC = () => {
     };
 
     return (
-        <Container fluid className="h-100">
+        <Container fluid className={`${styles.wrapper} h-100`}>
+            <InvintationHeader/>
             <PresentationComponent persons={family?.persons ?? null} />
             <ConditionContainerLayout condition={!!family?.persons}>
                 <Form.Label className={styles.header}>
-                    {UserFormText}
+                    <div className={styles.formDescription}>{UserFormText}</div>
                 </Form.Label>
                 <UserForm methods={methods} />
                 <Container
@@ -85,7 +90,7 @@ export const InvationModule: FC = () => {
                 >
                     <SubmitButton
                         title="Сохранить данные"
-                        text="Мы придем 🥳🥳🥳🥳🥳"
+                        text="Мы придем 🥳"
                         handlerSubmit={() => handlerSucces("success")}
                         variant="success"
                     />

@@ -1,0 +1,21 @@
+@import "../../styles/index.scss";
+.presentation {
+    width: 80%;
+    margin: 30px 20px;
+    padding: 20px 18px;
+    text-align: center;
+    background-color: #d0e8ef82;
+    .presentationAppeal {
+        font-family: var(--main-header);
+        font-size: 26px;
+        margin-bottom: 14px;
+    }
+    .presentationText {
+        color: var(--dark-grey);
+        font-size: 22px;
+        font-family: var(--main-text);
+    }
+    @media only screen and (max-width: 1024px) {
+        width: 94%;
+    }
+}
