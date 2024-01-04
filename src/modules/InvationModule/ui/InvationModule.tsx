@@ -5,7 +5,7 @@ import {
     SubmitButton,
     UserForm,
     ModalComponent,
-    InvintationHeader,
+    InvitationHeader,
 } from "../../../component";
 import { Container, Form } from "react-bootstrap";
 import { EStatusInvation, InputsType } from "../../../types";
@@ -77,7 +77,7 @@ export const InvationModule: FC = () => {
 
     return (
         <Container fluid className={`${styles.wrapper} h-100`}>
-            <InvintationHeader/>
+            <InvitationHeader/>
             <PresentationComponent persons={family?.persons ?? null} />
             <ConditionContainerLayout condition={!!family?.persons}>
                 <Form.Label className={styles.header}>
