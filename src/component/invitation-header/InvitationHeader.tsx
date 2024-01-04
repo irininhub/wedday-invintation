@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import frameImage from "../../assets/tl.webp";
-import flowersImage from "../../assets/screen.webp";
+import flowersImage from "../../assets/lamps.webp";
 
 export const InvitationHeader = () => {
     return (
