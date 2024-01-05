@@ -1,27 +1,72 @@
 @import "../../styles/index.scss";
 .invitationHeader {
-    width: 80%;
+    width: 100%;
     max-width: 860px;
-    margin-top: 40px;
     padding-top: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: relative;
     animation: 2s show ease;
+    .invitationHeaderContent {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .saveTheDate {
         color: var(--light-grey);
     }
     .flowersImageTop {
         position: absolute;
-        top: -50px;
-        left: -40%;
-        transform: rotate(-25deg);
+        top: -35%;
+        left: -30vw;
+        transform: rotate(-45deg) scale(1, -1);
+        width: 43%
     }
-    .flowersImageBottom {
+    .flowersImageTop1 {
         position: absolute;
-        right: 0;
+        top: 130px;
+        transform: rotate(-15deg) scale(-1, -1);
+        left: -37vw;
+        width: 38%
+    }
+    .flowersImageTop2 {
+        position: absolute;
+        top: -48px;
+        transform: rotate(114deg);
+        left: -21vw;
+        width: 20%
+    }
+    .flowersImageTop3 {
+        position: absolute;
+        top: -48px;
+        transform: rotate(114deg);
+        left: -21vw;
+        width: 20%
+    }
+
+    .flowersImageBottom {
+        width: 45%;
+        position: absolute;
+        right: -30vw;
+        bottom: 12%;
+        transform: rotate(-36deg);
+    }
+    .flowersImageBottom1 {
+        width: 30%;
+        position: absolute;
+        right: -35vw;
+        bottom: 0;
+        transform: rotate(-60deg) scale(-1, 1);
+    }
+    .coupleImage {
+        position: absolute;
+        right: -10vw;
+        bottom: 0;
+        margin-bottom: -80px;
+        opacity: 0.9;
+        width: 40%;
     }
 
     .blurredWrapper {
@@ -29,7 +74,7 @@
         animation: 1s rising ease;
         display: flex;
         justify-content: center;
-        opacity: 0.7;
+        opacity: 0.65;
         .flowersCircle {
             width: 80%;
         }
@@ -43,13 +88,15 @@
 
         .newlyweds {
             font-family: Lobster, sans-serif;
-            font-size: 5vw;
-            color: rgba(39, 36, 36, 0.856);
+            font-size: 4.3vw;
+            color: #0e1e4d;
         }
 
         .commonDate {
             margin-top: 26px;
-            font-family: Bad Script, sans-serif;
+            font-family:
+                Bad Script,
+                sans-serif;
             color: var(--light-grey);
             font-size: 3vw;
             display: flex;
