@@ -1,7 +1,8 @@
 import styles from "./styles.module.scss";
 import frameImage from "../../assets/kluax.webp";
+import groundLamps from "../../assets/lamps.webp";
 import flowersImage from "../../assets/flowersSmall/tl.webp";
-import coupleImage from "../../assets/couple.webp";
+import coupleImage from "../../assets/couple.png";
 import daisiesImage from "../../assets/flowersSmall/t14.webp";
 
 export const InvitationHeader = () => {
@@ -13,8 +14,9 @@ export const InvitationHeader = () => {
             <img alt="roses" className={styles.flowersImageTop3} src={daisiesImage} />
             <div className={styles.invitationHeaderContent}>
                 <div className={styles.saveTheDate}>Сохранить дату</div>
+                <img alt="flowers" className={styles.groundLamps} src={groundLamps} />
                 <div className={styles.blurredWrapper}>
-                    <img alt="flowers" className={styles.flowersCircle} src={frameImage} />
+                    <img alt="flowers" className={styles.groundCircle} src={frameImage} />
                 </div>
 
                 <div className={styles.newlywedsInfo}>

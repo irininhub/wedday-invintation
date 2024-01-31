@@ -22,28 +22,28 @@
         top: -35%;
         left: -30vw;
         transform: rotate(-45deg) scale(1, -1);
-        width: 43%
+        width: 43%;
     }
     .flowersImageTop1 {
         position: absolute;
         top: 130px;
         transform: rotate(-15deg) scale(-1, -1);
         left: -37vw;
-        width: 38%
+        width: 38%;
     }
     .flowersImageTop2 {
         position: absolute;
         top: -48px;
         transform: rotate(114deg);
         left: -21vw;
-        width: 20%
+        width: 20%;
     }
     .flowersImageTop3 {
         position: absolute;
         top: -48px;
         transform: rotate(114deg);
         left: -21vw;
-        width: 20%
+        width: 20%;
     }
 
     .flowersImageBottom {
@@ -68,14 +68,28 @@
         opacity: 0.9;
         width: 40%;
     }
-
+    .groundLamps {
+        top: -5vh;
+        left: 51vh;
+        width: 51vw;
+        position: absolute;
+        transform: rotate(7deg);
+        @media only screen and (max-width: 1024px) {
+            top: -4vh;
+            left: 30%;
+            width: 66vw;
+            transform: rotate(8deg);
+            min-width: 500px;
+        }
+    }
     .blurredWrapper {
         width: 88%;
         animation: 1s rising ease;
         display: flex;
         justify-content: center;
         opacity: 0.65;
-        .flowersCircle {
+        min-height: 250px;
+        .groundCircle {
             width: 80%;
         }
     }
