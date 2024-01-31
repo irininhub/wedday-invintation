@@ -19,8 +19,16 @@ import {
 } from "../../../constants/Text";
 import { useUpdateFamily } from "../../../hooks/useUpdateFamily";
 import styles from "./styles.module.scss";
+import { LocationComponent } from "../../../component/location/LocationComponent";
+import { TestComponent } from "../../../component/location/TestComponent";
+import { useLoadScript } from "@react-google-maps/api";
+
+const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
 export const InvationModule: FC = () => {
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: `${REACT_APP_GOOGLE_API_KEY}`,
+    });
     const location = useLocation();
     const [show, setShow] = useState(false);
     const [text, setText] = useState("");
@@ -77,8 +85,10 @@ export const InvationModule: FC = () => {
 
     return (
         <Container fluid className={`${styles.wrapper} h-100`}>
-            <InvitationHeader/>
+            <InvitationHeader />
             <PresentationComponent persons={family?.persons ?? null} />
+            {/* <LocationComponent /> */}
+            {isLoaded ? <TestComponent /> : null}
             <ConditionContainerLayout condition={!!family?.persons}>
                 <Form.Label className={styles.header}>
                     <div className={styles.formDescription}>{UserFormText}</div>
