@@ -1,3 +1,186 @@
 .invitationLayout {
     overflow-x: hidden;
 }
+
+.background {
+    width: 100%;
+    max-width: 860px;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: 2s show ease;
+    align-items: center;
+    .centerFlowers {
+        position: absolute;
+        top: 150px;
+        left: calc(50% - 20vw);
+        width: 30vw;
+        height: 30vw;
+    }
+    .leavesImageTop {
+        position: absolute;
+        transform: rotate(-15deg) scale(1, -1);
+        top: 21%;
+        left: -27vw;
+    }
+    .flowersImageTop {
+        position: absolute;
+        top: -35%;
+        left: -27vw;
+        transform: rotate(-45deg) scale(1, -1);
+        width: 43%;
+    }
+    .flowersImageTop1 {
+        position: absolute;
+        top: 130px;
+        transform: rotate(-15deg) scale(-1, -1);
+        left: -35vw;
+        width: 38%;
+    }
+    .flowersImageTop2 {
+        position: absolute;
+        top: -48px;
+        transform: rotate(114deg);
+        left: -21vw;
+        width: 20%;
+    }
+    .flowersImageTop3 {
+        position: absolute;
+        top: -48px;
+        transform: rotate(114deg);
+        left: -19vw;
+        width: 20%;
+    }
+    .flowersImageTop4 {
+        position: absolute;
+        top: 170px;
+        transform: rotate(140deg) scale(1, 1);
+        left: -24vw;
+        width: 15%;
+    }
+    .flowersImageBottom1 {
+        width: 45%;
+        position: absolute;
+        right: -33vw;
+        bottom: 12%;
+        transform: rotate(-36deg);
+    }
+    .flowersImageBottom2 {
+        width: 30%;
+        position: absolute;
+        right: -35vw;
+        bottom: 0;
+        transform: rotate(-60deg) scale(-1, 1);
+    }
+    .flowersImageBottom {
+        position: absolute;
+        right: -24vw;
+        top: -131px;
+        z-index: 0;
+        transform: rotate(-44deg) scale(-1, 1);
+    }
+    .coupleImage {
+        position: absolute;
+        right: -12vw;
+        bottom: 0;
+        margin-bottom: -80px;
+        opacity: 0.9;
+        width: 40%;
+        min-width: 180px;
+        @media only screen and (max-width: 1143px) {
+            right: -6%;
+        }
+        @media only screen and (max-width: 1029px) {
+            right: 0;
+            margin-bottom: -60px;
+        }
+        @media only screen and (max-width: 645px) {
+            margin-bottom: -30px;
+        }
+    }
+    .groundLamps {
+        top: -5vh;
+        left: 51vh;
+        width: 51vw;
+        max-width: 700px;
+        position: absolute;
+        transform: rotate(7deg);
+        @media only screen and (max-width: 1024px) {
+            top: -4vh;
+            left: 30%;
+            width: 66vw;
+            transform: rotate(8deg);
+            min-width: 500px;
+        }
+    }
+    @media only screen and (max-width: 1024px) {
+        padding-top: 40px;
+        width: 94%;
+        .flowersCircle {
+            width: 100%;
+        }
+        .newlyweds {
+            font-size: 6.5vw !important;
+        }
+    }
+}
+
+.blueBoxLayout {
+    width: 100%;
+    margin: 80px 20px 40px 20px;
+    border-radius: 0 30px 0 30px;
+    padding: 50px 50px 60px 50px;
+    text-align: center;
+    background-color: #eef4fc;
+    position: relative;
+    .blueBoxBefore {
+        left: 20px;
+        top: 20px;
+        position: absolute;
+        border-top: 4px solid white;
+        border-left: 4px solid white;
+        width: 200px;
+        height: 130px;
+    }
+    .blueBoxAfter {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 200px;
+        height: 130px;
+        border-bottom: 4px solid white;
+        border-right: 4px solid white;
+    }
+    @media only screen and (max-width: 1024px) {
+        width: 94%;
+    }
+    @media only screen and (max-width: 1029px) {
+        margin: 58px 20px;
+        border-radius: 0 20px 0 20px;
+    }
+    @media only screen and (max-width: 645px) {
+        margin: 28px 10px;
+        border-radius: 0 15px 0 15px;
+    }
+}
+.blueBoxLayout::before {
+    content: "";
+    position: absolute;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    top: 30px;
+    left: 30px;
+    width: 160px;
+    height: 90px;
+}
+.blueBoxLayout::after {
+    content: "";
+    position: absolute;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    right: 30px;
+    bottom: 30px;
+    width: 160px;
+    height: 90px;
+}

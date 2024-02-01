@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { FamilyType } from "../../types";
 import { useGetPersonsName } from "../../hooks/useGetPersonsName";
 import styles from "./styles.module.scss";
+import { BlueBoxLayout } from "../../layouts/InvationLayout/blueBox";
 
 interface IProps {
     persons: FamilyType[] | null;
@@ -24,13 +25,17 @@ export const PresentationComponent: FC<IProps> = ({ persons }) => {
     }, [isSeveral]);
 
     return (
-        <div className={styles.presentation}>
-            <div className={styles.presentationAppeal}>{commonAppeal} {text}!</div>
-            <div className={styles.presentationText}>
-                Мы рады сообщить {isSeveral ? 'Вам' : 'тебе'}, что 06.07.2024 состоится самое главное
-                торжество в нашей жизни - день нашей свадьбы! Приглашаем Вас
-                разделить с нами радость этого незабываемого дня.
-            </div>
-        </div>
+        <BlueBoxLayout>
+            <>
+                <div className={styles.presentationAppeal}>
+                    {commonAppeal} {text}!
+                </div>
+                <div className={styles.presentationText}>
+                    Мы рады сообщить {isSeveral ? "Вам" : "тебе"}, что <span>06.07.2024</span> состоится самое главное торжество в нашей жизни - день нашей
+                    свадьбы! Приглашаем
+                    {isSeveral ? " Вас" : " тебя"} разделить с нами радость этого незабываемого дня. И стать свидетелями начала нашего нового путешествия!
+                </div>
+            </>
+        </BlueBoxLayout>
     );
 };

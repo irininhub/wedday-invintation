@@ -1,23 +1,17 @@
 @import "../../styles/index.scss";
-.presentation {
-    // border: 1px solid #c7d9e3;
-    width: 85%;
-    margin: 80px 20px;
-    border-radius: 40px;
-    padding: 40px 40px 60px 40px;
-    text-align: center;
-    background-color: #c7d9e3;
-    .presentationAppeal {
-        font-family: var(--main-header);
-        font-size: 26px;
-        margin-bottom: 14px;
-    }
-    .presentationText {
-        color: var(--dark-grey);
-        font-size: 22px;
-        font-family: var(--main-text);
-    }
+.presentationAppeal {
+    font-family: var(--main-header);
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+.presentationText {
+    color: var(--dark-grey);
+    font-size: 22px;
+    font-family: var(--main-text);
     @media only screen and (max-width: 1024px) {
-        width: 94%;
+        font-size: 20px;
+    }
+    @media only screen and (max-width: 645px) {
+        font-size: 16px;
     }
 }
