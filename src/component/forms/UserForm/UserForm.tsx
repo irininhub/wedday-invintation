@@ -8,6 +8,7 @@ import {
 import { FormProvider, useFieldArray, UseFormReturn } from "react-hook-form";
 import { InputsType } from "../../../types";
 import { Container, Form } from "react-bootstrap";
+import s from "./styles.module.scss"
 
 interface IProps {
     methods: UseFormReturn<InputsType>;
@@ -25,7 +26,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                     <Container
                         key={field.id}
                         fluid
-                        className="p-0 d-flex align-items-center justify-content-between"
+                        className={s.formContainer}
                     >
                         <TooltipComponent title="Тут необходимо ввести данные о члене семьи (имя и отчество*)">
                             <Form.Control
@@ -34,16 +35,16 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                                 className="my-4 w-75"
                             />
                         </TooltipComponent>
-                        <Container className="p-0 w-25 d-flex align-items-center justify-content-end">
+                        <Container className="p-0 w-10 d-flex align-items-center" style={{border: "1px solid red"}}>
                             {fields.length > 1 && (
                                 <RemoveFieldsComponent
-                                    tooltip_title="Вы не сможете пойти?😓😓"
+                                    tooltip_title="Вы не сможете пойти?😓"
                                     handlerClick={() => remove(index)}
                                 />
                             )}
                             {index === fields.length - 1 && (
                                 <AddFieldsComponent
-                                    tooltip_title="Мы будем рады видеть кого-то еще...😃😃"
+                                    tooltip_title="Мы будем рады видеть кого-то еще...😃"
                                     handlerClick={() =>
                                         append({ id: uuidv4(), name: "" })
                                     }

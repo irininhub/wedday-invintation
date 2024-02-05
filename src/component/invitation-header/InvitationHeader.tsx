@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import frameImage from "../../assets/blot.webp";
+import frameImage from "../../assets/kluax.webp";
 import { BackgroundLayout } from "../../layouts/InvationLayout/background";
 import divider from "../../assets/divider.webp";
 import { SaveDate } from "./saveDate";

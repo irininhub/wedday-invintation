@@ -1,20 +1,23 @@
 import { FC } from "react";
 import { TooltipComponent } from "../Tooltip/TooltipComponent";
 import { Button } from "react-bootstrap";
+import s from "./styles.module.scss";
 
 interface IProps {
     title: string;
     text: string;
     handlerSubmit: () => void | Promise<void>;
-    variant?: "success" | "danger";
+    variant?: "success" | "danger" | "dark";
     disabled?: boolean;
+    className?: string;
 }
 
 export const ButtonComponent: FC<IProps> = ({
     title,
     text,
     handlerSubmit,
-    variant = "primary",
+    variant,
+    className = "",
     disabled = false,
 }) => {
     return (
@@ -23,7 +26,7 @@ export const ButtonComponent: FC<IProps> = ({
                 variant={variant}
                 onClick={handlerSubmit}
                 disabled={disabled}
-                className="my-2"
+                className={`my-2 ${s[className]}`}
             >
                 {text}
             </Button>

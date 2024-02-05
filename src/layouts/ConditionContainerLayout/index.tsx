@@ -10,6 +10,6 @@ export const ConditionContainerLayout: FC<IProps> = ({
     condition,
     children,
 }) => {
-    if (condition) return <Container fluid>{children}</Container>;
+    if (condition) return <Container className="d-flex flex-column align-items-center" fluid>{children}</Container>;
     return null;
 };

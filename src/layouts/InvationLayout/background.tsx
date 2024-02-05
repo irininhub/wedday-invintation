@@ -23,6 +23,8 @@ export const BackgroundLayout: FC<IProps> = ({ children }) => {
             <img alt="pink-flower" className={styles.flowersImageTop4} src={pinkFlower} />
             {children}
             <img alt="leaves" className={styles.flowersImageBottom} src={leavesImage} />
+            <img alt="pink-flower" className={styles.flowersImageBottom4} src={pinkFlower} />
+            <img alt="blot-white" className={styles.flowersImageBottom5} src={daisiesImage} />
             <img alt="roses" className={styles.flowersImageBottom1} src={flowersImage} />
             <img alt="roses" className={styles.flowersImageBottom2} src={flowersImage} />
             <img alt="bouquet" className={styles.coupleImage} src={coupleImage} />

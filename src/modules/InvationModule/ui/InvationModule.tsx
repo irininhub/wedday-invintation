@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { PresentationComponent, SubmitButton, UserForm, ModalComponent, InvitationHeader, PlaceComponent } from "../../../component";
-import { Container, Form } from "react-bootstrap";
+import { PresentationComponent, SubmitButton, UserForm, ModalComponent, InvitationHeader, InvitationFooter, PlaceComponent } from "../../../component";
+import { Container, Form, Button } from "react-bootstrap";
 import { EStatusInvation, InputsType } from "../../../types";
 import { useLocation } from "react-router-dom";
 import { useGetFamilyById } from "../hooks/useGetFamilyById";
@@ -66,7 +66,7 @@ export const InvationModule: FC = () => {
     };
 
     return (
-        <Container fluid className={`${styles.wrapper} h-100`}>
+        <Container className={`${styles.wrapper} mb-20`}>
             <InvitationHeader />
             <PresentationComponent persons={family?.persons ?? null} />
             <ConditionContainerLayout condition={!!family?.persons}>
@@ -75,15 +75,17 @@ export const InvationModule: FC = () => {
             {/* <LocationComponent /> */}
             {isLoaded ? <TestComponent /> : null}
             <ConditionContainerLayout condition={!!family?.persons}>
-                <BlueBoxLayout>
+                <BlueBoxLayout className="mt-5">
                     <Form.Label className={styles.header}>
                         <div className={styles.formDescription}>{UserFormText}</div>
                     </Form.Label>
                 </BlueBoxLayout>
                 <UserForm methods={methods} />
                 <Container fluid className="d-flex flex-wrap align-items-center justify-content-around">
-                    <SubmitButton title="Сохранить данные" text="Мы придем 🥳" handlerSubmit={() => handlerSucces("success")} variant="success" />
-                    <SubmitButton title="Сохранить данные" text="Не сможем придти 😓" handlerSubmit={() => handlerSucces("danger")} variant="danger" />
+                    
+                    <SubmitButton className="blue"  title="Сохранить данные" text="Мы придем" handlerSubmit={() => handlerSucces("success")} />
+    
+                    <SubmitButton className="grey" title="Сохранить данные" text="Не сможем придти" handlerSubmit={() => handlerSucces("danger")} variant="dark" />
                     <ModalComponent
                         show={show}
                         text={text}
@@ -96,6 +98,7 @@ export const InvationModule: FC = () => {
                     />
                 </Container>
             </ConditionContainerLayout>
+            <InvitationFooter />
         </Container>
     );
 };
