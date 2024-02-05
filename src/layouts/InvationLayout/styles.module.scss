@@ -21,6 +21,10 @@
         scaling 1s linear infinite,
         rotating 1s linear infinite;
 }
+@keyframes rising {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 .invitationLayout {
     overflow-x: hidden;
 }
@@ -45,7 +49,7 @@
         position: absolute;
         transform: rotate(-15deg) scale(1, -1);
         bottom: 0;
-        left: -12vw;
+        left: -15vw;
         width: 32vw;
         max-width: 470px;
         transition: all 1s;
@@ -53,18 +57,18 @@
     .flowersImageTop {
         position: absolute;
         top: -28%;
-        left: -8vw;
+        left: -12vw;
         transform: rotate(-45deg) scale(1, -1);
-        width: 29%;
-        // animation: 1.2s rising ease;
+        width: 27%;
+        animation: 1.2s rising ease;
     }
     .flowersImageTop1 {
         position: absolute;
         top: 104px;
         transform: rotate(-15deg) scale(-1, -1);
-        left: -18vw;
+        left: -21vw;
         width: 30%;
-        // animation: 2s rising ease;
+        animation: 2s rising ease;
     }
     .flowersImageTop2 {
         position: absolute;
@@ -72,15 +76,15 @@
         transform: rotate(114deg);
         left: -17vw;
         width: 16%;
-        // animation: 1s rising ease;
+        animation: 1s rising ease;
     }
     .flowersImageTop3 {
         position: absolute;
         top: -48px;
         transform: rotate(114deg);
-        left: -2vw;
+        left: -14vw;
         width: 16%;
-        // animation: 1.5s rising ease;
+        animation: 1.5s rising ease;
     }
     .flowersImageTop4 {
         position: absolute;
@@ -88,15 +92,15 @@
         transform: rotate(140deg) scale(1, 1);
         left: -7vw;
         width: 12%;
-        // animation: 1s rising ease;
+        animation: 1s rising ease;
     }
     .flowersImageBottom1 {
-        width: 29%;
+        width: 27%;
         position: absolute;
-        right: -14vw;
+        right: -15vw;
         bottom: 24%;
         transform: rotate(-36deg);
-        // animation: 1.2s rising ease;
+        animation: 1.2s rising ease;
     }
     .flowersImageBottom2 {
         width: 30%;
@@ -104,14 +108,14 @@
         right: -24vw;
         bottom: 0;
         transform: rotate(-60deg) scale(-1, 1);
-        // animation: 2s rising ease;
+        animation: 2s rising ease;
     }
     .flowersImageBottom4 {
         position: absolute;
-        right: 3vw;
-        top: -12vw;
+        right: -17vw;
+        top: -6vw;
         transform: rotate(-160deg) scale(-1, 1);
-        // animation: 1.5s rising ease;
+        animation: 1.5s rising ease;
         width: 12%;
     }
     .flowersImageBottom5 {
@@ -119,7 +123,7 @@
         right: -23%;
         top: 25%;
         transform: rotate(-152deg);
-        // animation: 1.3s rising ease;
+        animation: 1.3s rising ease;
     }
     .flowersImageBottom {
         position: absolute;
@@ -129,7 +133,7 @@
         width: 33vw;
         max-width: 470px;
         transform: rotate(-37deg) scale(-1, 1);
-        // animation: 1s rising ease;
+        animation: 1s rising ease;
     }
     .coupleImage {
         position: absolute;
@@ -138,8 +142,17 @@
         opacity: 0.9;
         width: 28%;
         min-width: 180px;
+        @media only screen and (max-width: 1200px) {
+            width: 34%;
+        }
+        @media only screen and (max-width: 992px) {
+            width: 41%;
+        }
         @media only screen and (max-width: 1029px) {
             right: 0;
+        }
+        @media only screen and (max-width: 650px) {
+            left: calc(50% - 90px);
         }
     }
     .groundLamps {
@@ -166,13 +179,22 @@
             font-size: 6.5vw !important;
         }
     }
-    @media only screen and (max-width: 1200px) {
-        border: 1px solid red;
-        .flowersImageBottom {
-            right: -9vw;
+    @media only screen and (max-width: 1650px) {
+        .flowersImageBottom4 {
+            right: -14vw;
+            top: -9vw;
         }
+        .flowersImageTop3 {
+            left: -7vw;
+        }
+        .flowersImageBottom5 {
+            right: -19%;
+            top: 20%;
+        }
+    }
+    @media only screen and (max-width: 1200px) {
         .flowersImageBottom1 {
-            bottom: 34%;
+            bottom: 28%;
         }
         .flowersImageBottom4 {
             right: -12vw;
@@ -222,7 +244,7 @@
             width: 36%;
         }
         .flowersImageTop1 {
-            left: -24vw;
+            left: -22vw;
             width: 37%;
             top: 219px;
         }
@@ -266,18 +288,19 @@
             right: -91px;
         }
     }
-    @media only screen and (max-width: 560px) {
+    @media only screen and (max-width: 600px) {
         .flowersImageTop,
         .flowersImageTop4,
         .leavesImageTop,
         .flowersImageTop3,
+        .flowersImageBottom,
         .flowersImageBottom4,
         .flowersImageBottom5,
         .flowersImageBottom2 {
             visibility: hidden;
         }
         .flowersImageBottom1 {
-            bottom: 43%;
+            top: 188px;
             right: -20vw;
         }
 
