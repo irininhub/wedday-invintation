@@ -25,17 +25,16 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                 return (
                     <Container
                         key={field.id}
-                        fluid
                         className={s.formContainer}
                     >
                         <TooltipComponent title="Тут необходимо ввести данные о члене семьи (имя и отчество*)">
                             <Form.Control
                                 placeholder="Введите имя члена семьи"
                                 {...methods.register(`persons.${index}.name`)}
-                                className="my-4 w-75"
+                                className={s.formControle}
                             />
                         </TooltipComponent>
-                        <Container className="p-0 w-10 d-flex align-items-center" style={{border: "1px solid red"}}>
+                        <div className="p-0 w-10 d-flex align-items-center" style={{maxWidth: "90px"}}>
                             {fields.length > 1 && (
                                 <RemoveFieldsComponent
                                     tooltip_title="Вы не сможете пойти?😓"
@@ -50,7 +49,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                                     }
                                 />
                             )}
-                        </Container>
+                        </div>
                     </Container>
                 );
             })}
