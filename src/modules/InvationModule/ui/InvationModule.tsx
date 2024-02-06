@@ -1,17 +1,29 @@
 import { FC, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { PresentationComponent, SubmitButton, UserForm, ModalComponent, InvitationHeader, InvitationFooter, PlaceComponent } from "../../../component";
-import { Container, Form, Button } from "react-bootstrap";
+import {
+    PresentationComponent,
+    SubmitButton,
+    UserForm,
+    ModalComponent,
+    InvitationHeader,
+    InvitationFooter,
+    PlaceComponent,
+} from "../../../component";
+import { Container, Form } from "react-bootstrap";
 import { EStatusInvation, InputsType } from "../../../types";
 import { useLocation } from "react-router-dom";
 import { useGetFamilyById } from "../hooks/useGetFamilyById";
 import { ConditionContainerLayout } from "../../../layouts";
-import { DangerFromText, SuccesFromText, UserFormText } from "../../../constants/Text";
+import {
+    DangerFromText,
+    SuccesFromText,
+    UserFormText,
+} from "../../../constants/Text";
 import { useUpdateFamily } from "../../../hooks/useUpdateFamily";
 import styles from "./styles.module.scss";
 import { BlueBoxLayout } from "../../../layouts/InvationLayout/blueBox";
-import { TestComponent } from "../../../component/location/TestComponent";
 import { useLoadScript } from "@react-google-maps/api";
+import { LocationComponent } from "../../../component/location/LocationComponent";
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
@@ -35,8 +47,14 @@ export const InvationModule: FC = () => {
     });
 
     const { handleSubmit } = methods;
-    const onSubmit: SubmitHandler<InputsType> = async ({ onSubmit, ...fields }) => {
-        const status: EStatusInvation = color === "success" ? EStatusInvation.RESOLVED : EStatusInvation.REJECTED;
+    const onSubmit: SubmitHandler<InputsType> = async ({
+        onSubmit,
+        ...fields
+    }) => {
+        const status: EStatusInvation =
+            color === "success"
+                ? EStatusInvation.RESOLVED
+                : EStatusInvation.REJECTED;
         setShow(false);
         setText("");
         console.log("fields", fields);
@@ -49,7 +67,9 @@ export const InvationModule: FC = () => {
     }, []);
     useEffect(() => {
         if (!!family.persons) {
-            const fields = family.persons?.map((el) => el as { id: string; name: string });
+            const fields = family.persons?.map(
+                (el) => el as { id: string; name: string },
+            );
             methods.setValue("persons", fields);
             methods.setValue("docId", family.docId as string);
             updateFamily(family.docId as string, {
@@ -72,20 +92,34 @@ export const InvationModule: FC = () => {
             <ConditionContainerLayout condition={!!family?.persons}>
                 <PlaceComponent />
             </ConditionContainerLayout>
-            {/* <LocationComponent /> */}
-            {isLoaded ? <TestComponent /> : null}
+            {isLoaded ? <LocationComponent /> : null}
             <ConditionContainerLayout condition={!!family?.persons}>
                 <BlueBoxLayout className="mt-5">
                     <Form.Label className={styles.header}>
-                        <div className={styles.formDescription}>{UserFormText}</div>
+                        <div className={styles.formDescription}>
+                            {UserFormText}
+                        </div>
                     </Form.Label>
                 </BlueBoxLayout>
                 <UserForm methods={methods} />
-                <Container fluid className="d-flex flex-wrap align-items-center justify-content-around">
-                    
-                    <SubmitButton className="blue"  title="Сохранить данные" text="Мы придем" handlerSubmit={() => handlerSucces("success")} />
-    
-                    <SubmitButton className="grey" title="Сохранить данные" text="Не сможем придти" handlerSubmit={() => handlerSucces("danger")} variant="dark" />
+                <Container
+                    fluid
+                    className="d-flex flex-wrap align-items-center justify-content-around"
+                >
+                    <SubmitButton
+                        className="blue"
+                        title="Сохранить данные"
+                        text="Мы придем"
+                        handlerSubmit={() => handlerSucces("success")}
+                    />
+
+                    <SubmitButton
+                        className="grey"
+                        title="Сохранить данные"
+                        text="Не сможем придти"
+                        handlerSubmit={() => handlerSucces("danger")}
+                        variant="dark"
+                    />
                     <ModalComponent
                         show={show}
                         text={text}

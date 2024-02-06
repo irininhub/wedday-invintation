@@ -3,4 +3,23 @@
     height: 200px;
     width: 100%;
     margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .contacts {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .block {
+            margin-left: 20px;
+            a {
+                font-size: 20px;
+                font-weight: bold;
+                color: var(--dark-grey);
+                margin-right: 20px;
+            }
+        }
+    }
 }

@@ -1,0 +1,11 @@
+.location {
+    border: none;
+    background-color: white;
+    .details {
+        display: flex;
+        flex-direction: column;
+        .show {
+            color: blue;
+        }
+    }
+}
