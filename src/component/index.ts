@@ -4,4 +4,5 @@ export * from "./presentation/PresentationComponent";
 export * from "./invitation-header/InvitationHeader";
 export * from "./invitation-footer/InvitationFooter";
 export * from "./forms";
-export * from "./place/PlaceComponent"
+export * from "./place/PlaceComponent";
+export * from "./timing/TimingInfo";

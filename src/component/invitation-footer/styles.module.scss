@@ -1,25 +1,49 @@
 .invitationFooterContent {
     background-color: #eef4fc;
-    height: 200px;
+    height: 250px;
     width: 100%;
     margin-top: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    .title {
+        font-family: var(--main-text);
+        text-decoration: underline;
+    }
     .contacts {
         width: 100%;
         height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-family: var(--sub-header);
         .block {
             margin-left: 20px;
             a {
                 font-size: 20px;
+                text-decoration: none;
                 font-weight: bold;
                 color: var(--dark-grey);
-                margin-right: 20px;
+                :hover {
+                    color: red;
+                    opacity: 0.1 !important;
+                }
             }
         }
+    }
+    .botleImg {
+        position: absolute;
+        width: 350px;
+        top: 50px;
+    }
+    .botleTop {
+        left: 0;
+    }
+    .botleBottom {
+        right: 0;
+        transform: rotate(0deg) scale(-1, 1);
     }
 }

@@ -8,6 +8,7 @@ import {
     InvitationHeader,
     InvitationFooter,
     PlaceComponent,
+    TimingInfo,
 } from "../../../component";
 import { Container, Form } from "react-bootstrap";
 import { EStatusInvation, InputsType } from "../../../types";
@@ -94,6 +95,7 @@ export const InvationModule: FC = () => {
             </ConditionContainerLayout>
             {isLoaded ? <LocationComponent /> : null}
             <ConditionContainerLayout condition={!!family?.persons}>
+                <TimingInfo />
                 <BlueBoxLayout className="mt-5">
                     <Form.Label className={styles.header}>
                         <div className={styles.formDescription}>

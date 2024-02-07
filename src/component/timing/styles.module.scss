@@ -1,0 +1,88 @@
+@import "../../styles/index.scss";
+.timingInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0 0 0;
+    .clockCircle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(228, 194, 192, 0.527);
+        border-radius: 50%;
+        margin-bottom: 12px;
+        .clockMain {
+            height: 80px;
+            mask-image: url("../../assets/clock.webp");
+            width: 80px;
+            background-color: #e09794;
+            mask-size: 100%;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+    }
+
+    .title {
+        font-family: var(--sub-header);
+        margin-bottom: 14px;
+    }
+    .timeContainer {
+        padding: 10px 30px;
+        .timingIcon {
+            display: flex;
+            justify-content: center;
+            width: 100px;
+            margin-right: 30px;
+            .people {
+                height: 40px;
+            }
+            .ring {
+                height: 68px;
+                padding-bottom: 9px;
+            }
+            .plate {
+                height: 65px;
+            }
+            .clock {
+                padding-top: 5px;
+                height: 55px;
+            }
+        }
+        .timing {
+            display: flex;
+            flex-direction: column;
+            font-family: var(--main-text);
+            font-size: 19px;
+            .time {
+                margin-right: 6px;
+                font-weight: bold;
+            }
+        }
+    }
+    .dividerTop {
+        margin-top: 10px;
+    }
+    @media only screen and (max-width: 800px) {
+        .timeContainer {
+            padding: 10px 10px;
+            .timingIcon {
+                margin-right: 20px;
+            }
+            .timing {
+                font-size: 15px;
+            }
+        }
+    }
+    @media only screen and (max-width: 430px) {
+        .timeContainer {
+            padding: 10px 0;
+            .timingIcon {
+                margin-right: 15px;
+            }
+            .timing {
+                font-size: 14px;
+            }
+        }
+    }
+}

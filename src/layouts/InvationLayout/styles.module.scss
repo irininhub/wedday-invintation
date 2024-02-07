@@ -52,7 +52,6 @@
         left: -15vw;
         width: 32vw;
         max-width: 470px;
-        transition: all 1s;
     }
     .flowersImageTop {
         position: absolute;
@@ -338,11 +337,11 @@
         border-right: 4px solid white;
     }
     @media only screen and (max-width: 1029px) {
-        margin: 0 20px;
+        margin: 0 20px 15px 20px;
         border-radius: 0 20px 0 20px;
     }
     @media only screen and (max-width: 645px) {
-        margin: 0 10px;
+        margin: 0 10px 15px 10px;
         border-radius: 0 15px 0 15px;
     }
 }
