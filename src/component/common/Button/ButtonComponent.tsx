@@ -26,7 +26,7 @@ export const ButtonComponent: FC<IProps> = ({
                 variant={variant}
                 onClick={handlerSubmit}
                 disabled={disabled}
-                className={`my-2 ${s[className]}`}
+                className={`my-2 mx-2 ${s[className]}`}
             >
                 {text}
             </Button>

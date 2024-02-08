@@ -43,7 +43,7 @@ export const InvationModule: FC = () => {
         mode: "onBlur",
         defaultValues: {
             ...family,
-            persons: family.persons,
+            persons: family?.persons,
         },
     });
 
@@ -106,7 +106,7 @@ export const InvationModule: FC = () => {
                 <UserForm methods={methods} />
                 <Container
                     fluid
-                    className="d-flex flex-wrap align-items-center justify-content-around"
+                    className={styles.actionsContainer}
                 >
                     <SubmitButton
                         className="blue"

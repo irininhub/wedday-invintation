@@ -1,49 +1,126 @@
 .invitationFooterContent {
-    background-color: #eef4fc;
-    height: 250px;
     width: 100%;
     margin-top: 50px;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    justify-content: end;
     position: relative;
     overflow: hidden;
-    .title {
-        font-family: var(--main-text);
-        text-decoration: underline;
-    }
-    .contacts {
-        width: 100%;
-        height: 50px;
+    height: 300px;
+    .invitationInfo {
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-family: var(--sub-header);
-        .block {
-            margin-left: 20px;
-            a {
-                font-size: 20px;
-                text-decoration: none;
-                font-weight: bold;
-                color: var(--dark-grey);
-                :hover {
-                    color: red;
-                    opacity: 0.1 !important;
+        flex-direction: column;
+
+        background-color: #eef4fc;
+        padding: 20px;
+        height: 250px;
+        width: 100%;
+        .title {
+            font-family: var(--main-text);
+            font-size: 31px;
+        }
+        .contactsBox {
+            background-color: #eef4fc;
+            z-index: 1;
+            margin-top: 8px;
+            padding: 5px 0;
+            border-radius: 4px;
+            @media only screen and (max-width: 1024px) {
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            }
+        }
+        .contacts {
+            padding: 0 16px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--sub-header);
+
+            .block {
+                margin-left: 20px;
+                a {
+                    font-size: 19px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: var(--dark-grey);
+                    :hover {
+                        color: red;
+                        opacity: 0.1 !important;
+                    }
                 }
             }
         }
+        .flowerImg {
+            position: absolute;
+            width: 350px;
+            top: 0;
+        }
+        .flowerTop {
+            left: -20px;
+        }
+        .flowerBottom {
+            right: -20px;
+            transform: rotate(0deg) scale(-1, 1);
+        }
+        .flowerBlueTop {
+            width: 300px;
+            left: 70px;
+            top: 70px;
+            transform: rotate(24deg);
+        }
+        .flowerBlueBottom {
+            right: 70px;
+            top: 70px;
+            width: 300px;
+            transform: rotate(-24deg) scale(-1, 1);
+        }
+        @media only screen and (max-width: 1124px) {
+            .flowerImg {
+                width: 280px;
+            }
+        }
+        @media only screen and (max-width: 992px) {
+            .flowerImg {
+                width: 200px;
+                top: 40px;
+            }
+            .flowerBlueBottom,
+            .flowerBlueTop {
+                top: 120px;
+                transform: rotate(0);
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .flowerImg {
+                width: 150px;
+                top: 120px;
+            }
+            .flowerTop {
+                left: -30px;
+            }
+            .flowerBottom {
+                right: -30px;
+            }
+            .flowerBlueBottom,
+            .flowerBlueTop {
+                top: 190px;
+            }
+            .flowerBlueTop {
+                left: 0;
+            }
+            .flowerBlueBottom {
+                right: 0;
+            }
+        }
     }
-    .botleImg {
-        position: absolute;
-        width: 350px;
-        top: 50px;
+    @media only screen and (max-width: 1124px) {
+        margin-top: 10px;
     }
-    .botleTop {
-        left: 0;
-    }
-    .botleBottom {
-        right: 0;
-        transform: rotate(0deg) scale(-1, 1);
+    @media only screen and (max-width: 992px) {
+        margin-top: 0;
+        height: 285px;
     }
 }

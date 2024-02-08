@@ -34,7 +34,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                                 className={s.formControle}
                             />
                         </TooltipComponent>
-                        <div className="p-0 w-10 d-flex align-items-center" style={{maxWidth: "90px"}}>
+                        <div className="p-0 w-10 d-flex align-items-center" style={{width: "90px"}}>
                             {fields.length > 1 && (
                                 <RemoveFieldsComponent
                                     tooltip_title="Вы не сможете пойти?😓"

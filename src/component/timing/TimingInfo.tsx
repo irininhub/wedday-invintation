@@ -35,7 +35,7 @@ export const TimingInfo: FC = () => {
     ];
     const renderTiming = () =>
         timing.map((el) => (
-            <div className="d-flex mb-2">
+            <div className="d-flex mb-2" key={el.time}>
                 <div className={s.timingIcon}>
                     <img alt="icon" className={`${s[el.class]}`} src={el.image} />
                 </div>
