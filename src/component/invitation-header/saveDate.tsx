@@ -31,7 +31,6 @@ export const SaveDate: FC = () => {
                 {renderDate()}
                 <img alt="roses" className={s.heart} src={heart} />
             </div>
-            <div className={s.saveTheDate}>Сохранить дату</div>
             <a
                 className={s.saveTheDate}
                 target="_blank"

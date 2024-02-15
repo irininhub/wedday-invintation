@@ -17,10 +17,17 @@ export enum EStatusInvation {
     REJECTED = "rejected",
 }
 
+type formType = {
+    eat: Array<string>;
+    alcohol: Array<string>;
+    other: string;
+}
+
 export type InputsType = {
     docId: string;
     surname: string;
     surname_id: string;
     persons: Array<{ id: string; name: string }>;
+    form: formType;
     onSubmit: (value: ChangeEvent<HTMLInputElement>) => void;
 };

@@ -8,7 +8,7 @@ import {
 import { FormProvider, useFieldArray, UseFormReturn } from "react-hook-form";
 import { InputsType } from "../../../types";
 import { Container, Form } from "react-bootstrap";
-import s from "./styles.module.scss"
+import s from "./styles.module.scss";
 
 interface IProps {
     methods: UseFormReturn<InputsType>;
@@ -19,14 +19,15 @@ export const UserForm: FC<IProps> = ({ methods }) => {
         control: methods.control,
         name: "persons",
     });
+    const { fields: eatFields } = useFieldArray({
+        control: methods.control,
+        name: "form",
+    });
     return (
         <FormProvider {...methods}>
             {fields.map((field, index) => {
                 return (
-                    <Container
-                        key={field.id}
-                        className={s.formContainer}
-                    >
+                    <Container key={field.id} className={s.formContainer}>
                         <TooltipComponent title="Тут необходимо ввести данные о члене семьи (имя и отчество*)">
                             <Form.Control
                                 placeholder="Введите имя члена семьи"
@@ -34,7 +35,10 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                                 className={s.formControle}
                             />
                         </TooltipComponent>
-                        <div className="p-0 w-10 d-flex align-items-center" style={{width: "90px"}}>
+                        <div
+                            className="p-0 w-10 d-flex align-items-center"
+                            style={{ width: "90px" }}
+                        >
                             {fields.length > 1 && (
                                 <RemoveFieldsComponent
                                     tooltip_title="Вы не сможете пойти?😓"
@@ -53,6 +57,8 @@ export const UserForm: FC<IProps> = ({ methods }) => {
                     </Container>
                 );
             })}
+            <Form.Check {...methods.register(`form.eat`)} />
+            <Form.Check {...methods.register(`form.eat`)} />
         </FormProvider>
     );
 };

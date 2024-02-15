@@ -10,7 +10,7 @@ export const TimingInfo: FC = () => {
     const timing = [
         {
             time: "14:30",
-            info: "Сбор гостей",
+            info: "Сбор гостей на трансфер",
             image: peopleImg,
             class: "people",
         },
@@ -35,7 +35,7 @@ export const TimingInfo: FC = () => {
     ];
     const renderTiming = () =>
         timing.map((el) => (
-            <div className="d-flex mb-2" key={el.time}>
+            <div className={s.eventBox} key={el.time}>
                 <div className={s.timingIcon}>
                     <img alt="icon" className={`${s[el.class]}`} src={el.image} />
                 </div>
@@ -52,7 +52,7 @@ export const TimingInfo: FC = () => {
                 <div className={s.clockMain} />
             </div>
 
-            <h1 className={s.title}>Время</h1>
+            <h1 className={s.title}>Свадебное расписание</h1>
             <div className={s.timeContainer}>{renderTiming()}</div>
             <img alt="divider" className={s.dividerTop} src={divider} />
         </div>
