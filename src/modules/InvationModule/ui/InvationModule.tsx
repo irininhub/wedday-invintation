@@ -6,21 +6,28 @@ import {
     UserForm,
     ModalComponent,
     InvitationHeader,
+    InvitationFooter,
+    PlaceComponent,
+    TimingInfo,
 } from "../../../component";
 import { Container, Form } from "react-bootstrap";
 import { EStatusInvation, InputsType } from "../../../types";
 import { useLocation } from "react-router-dom";
 import { useGetFamilyById } from "../hooks/useGetFamilyById";
 import { ConditionContainerLayout } from "../../../layouts";
-import {
-    DangerFromText,
-    SuccesFromText,
-    UserFormText,
-} from "../../../constants/Text";
+import { DangerFromText, SuccesFromText, UserFormText } from "../../../constants/Text";
 import { useUpdateFamily } from "../../../hooks/useUpdateFamily";
 import styles from "./styles.module.scss";
+import { BlueBoxLayout } from "../../../layouts/InvationLayout/blueBox";
+import { useLoadScript } from "@react-google-maps/api";
+import { LocationComponent } from "../../../component/location/LocationComponent";
+
+const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
 export const InvationModule: FC = () => {
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: `${REACT_APP_GOOGLE_API_KEY}`,
+    });
     const location = useLocation();
     const [show, setShow] = useState(false);
     const [text, setText] = useState("");
@@ -32,19 +39,13 @@ export const InvationModule: FC = () => {
         mode: "onBlur",
         defaultValues: {
             ...family,
-            persons: family.persons,
+            persons: family?.persons,
         },
     });
 
     const { handleSubmit } = methods;
-    const onSubmit: SubmitHandler<InputsType> = async ({
-        onSubmit,
-        ...fields
-    }) => {
-        const status: EStatusInvation =
-            color === "success"
-                ? EStatusInvation.RESOLVED
-                : EStatusInvation.REJECTED;
+    const onSubmit: SubmitHandler<InputsType> = async ({ onSubmit, ...fields }) => {
+        const status: EStatusInvation = color === "success" ? EStatusInvation.RESOLVED : EStatusInvation.REJECTED;
         setShow(false);
         setText("");
         console.log("fields", fields);
@@ -57,9 +58,7 @@ export const InvationModule: FC = () => {
     }, []);
     useEffect(() => {
         if (!!family.persons) {
-            const fields = family.persons?.map(
-                (el) => el as { id: string; name: string },
-            );
+            const fields = family.persons?.map((el) => el as { id: string; name: string });
             methods.setValue("persons", fields);
             methods.setValue("docId", family.docId as string);
             updateFamily(family.docId as string, {
@@ -76,29 +75,31 @@ export const InvationModule: FC = () => {
     };
 
     return (
-        <Container fluid className={`${styles.wrapper} h-100`}>
-            <InvitationHeader/>
+        <Container className={`${styles.wrapper} mb-20`}>
+            <InvitationHeader />
             <PresentationComponent persons={family?.persons ?? null} />
             <ConditionContainerLayout condition={!!family?.persons}>
-                <Form.Label className={styles.header}>
-                    <div className={styles.formDescription}>{UserFormText}</div>
-                </Form.Label>
+                <PlaceComponent />
+            </ConditionContainerLayout>
+            {isLoaded ? <LocationComponent /> : null}
+            <ConditionContainerLayout condition={!!family?.persons}>
+                <TimingInfo />
+                <BlueBoxLayout className="mt-5">
+                    <Form.Label className={styles.header}>
+                        <div className={styles.formDescription}>{UserFormText}</div>
+                    </Form.Label>
+                </BlueBoxLayout>
+
                 <UserForm methods={methods} />
-                <Container
-                    fluid
-                    className="d-flex flex-wrap align-items-center justify-content-around"
-                >
+                <Container fluid className={styles.actionsContainer}>
+                    <SubmitButton className="blue" title="Сохранить данные" text="Мы придем" handlerSubmit={() => handlerSucces("success")} />
+
                     <SubmitButton
+                        className="grey"
                         title="Сохранить данные"
-                        text="Мы придем 🥳"
-                        handlerSubmit={() => handlerSucces("success")}
-                        variant="success"
-                    />
-                    <SubmitButton
-                        title="Сохранить данные"
-                        text="Не сможем придти 😓"
+                        text="Не сможем придти"
                         handlerSubmit={() => handlerSucces("danger")}
-                        variant="danger"
+                        variant="dark"
                     />
                     <ModalComponent
                         show={show}
@@ -112,6 +113,7 @@ export const InvationModule: FC = () => {
                     />
                 </Container>
             </ConditionContainerLayout>
+            <InvitationFooter />
         </Container>
     );
 };

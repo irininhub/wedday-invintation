@@ -1,130 +1,122 @@
 @import "../../styles/index.scss";
-.invitationHeader {
-    width: 100%;
-    max-width: 860px;
-    padding-top: 100px;
+
+.invitationHeaderContent {
     display: flex;
     flex-direction: column;
-    position: relative;
-    animation: 2s show ease;
-    .invitationHeaderContent {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    align-items: center;
+    height: 100%;
+}
 
-    .saveTheDate {
-        color: var(--light-grey);
-    }
-    .flowersImageTop {
-        position: absolute;
-        top: -35%;
-        left: -30vw;
-        transform: rotate(-45deg) scale(1, -1);
-        width: 43%
-    }
-    .flowersImageTop1 {
-        position: absolute;
-        top: 130px;
-        transform: rotate(-15deg) scale(-1, -1);
-        left: -37vw;
-        width: 38%
-    }
-    .flowersImageTop2 {
-        position: absolute;
-        top: -48px;
-        transform: rotate(114deg);
-        left: -21vw;
-        width: 20%
-    }
-    .flowersImageTop3 {
-        position: absolute;
-        top: -48px;
-        transform: rotate(114deg);
-        left: -21vw;
-        width: 20%
-    }
-
-    .flowersImageBottom {
-        width: 45%;
-        position: absolute;
-        right: -30vw;
-        bottom: 12%;
-        transform: rotate(-36deg);
-    }
-    .flowersImageBottom1 {
-        width: 30%;
-        position: absolute;
-        right: -35vw;
-        bottom: 0;
-        transform: rotate(-60deg) scale(-1, 1);
-    }
-    .coupleImage {
-        position: absolute;
-        right: -10vw;
-        bottom: 0;
-        margin-bottom: -80px;
-        opacity: 0.9;
-        width: 40%;
-    }
-
-    .blurredWrapper {
-        width: 88%;
-        animation: 1s rising ease;
-        display: flex;
-        justify-content: center;
-        opacity: 0.65;
-        .flowersCircle {
-            width: 80%;
-        }
-    }
-    .newlywedsInfo {
-        position: absolute;
-        top: 42%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .newlyweds {
-            font-family: Lobster, sans-serif;
-            font-size: 4.3vw;
-            color: #0e1e4d;
-        }
-
-        .commonDate {
-            margin-top: 26px;
-            font-family:
-                Bad Script,
-                sans-serif;
-            color: var(--light-grey);
-            font-size: 3vw;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            .smallDate {
-                font-size: 2.5vw;
-                font-weight: bold;
-            }
-            .numberDate {
-                margin: 0 10px;
-                padding-top: 10px;
-            }
-            .subDate {
-                display: inline-flex;
-                font-size: 2.5vw;
-                border-top: 1px solid var(--light-grey);
-                border-bottom: 1px solid var(--light-grey);
-            }
-        }
-    }
+.groundLamps {
+    top: -5vh;
+    left: 51vh;
+    width: 51vw;
+    max-width: 700px;
+    position: absolute;
+    transform: rotate(7deg);
     @media only screen and (max-width: 1024px) {
-        width: 94%;
-        .flowersCircle {
-            width: 100%;
+        top: -4vh;
+        left: 30%;
+        width: 66vw;
+        transform: rotate(8deg);
+        min-width: 500px;
+    }
+}
+.blurredWrapper {
+    animation: 1s rising ease;
+    display: flex;
+    justify-content: center;
+    opacity: 0.47;
+    @media only screen and (max-width: 700px) {
+        margin-top: 24%;
+    }
+    .groundCircle {
+        width: 70%;
+        max-width: 570px;
+        margin-right: 45px;
+    }
+}
+.newlywedsInfo {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+
+    .newlyweds {
+        font-family: Lobster, sans-serif;
+        font-size: 5vw;
+        color: #0e1e4d;
+        text-shadow: #fff 3px 3px 10px;
+        @media only screen and (min-width: 1310px) {
+            font-size: 65px !important;
         }
-        .newlyweds {
-            font-size: 6.5vw !important;
+        @media only screen and (max-width: 580px) {
+            font-size: 27px !important;
+        }
+        @media only screen and (max-width: 380px) {
+            font-size: 21px !important;
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        top: 220px;
+    }
+    @media only screen and (max-width: 700px) {
+        top: 32%;
+    }
+
+    .commonDate {
+        margin-top: 26px;
+        font-family:
+            Bad Script,
+            sans-serif;
+        color: #3c3a3d;
+        font-size: 3vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        .smallDate {
+            font-size: 2.5vw;
+            font-weight: bold;
+            @media only screen and (max-width: 580px) {
+                font-size: 19px !important;
+            }
+        }
+        .numberDate {
+            margin: 0 10px;
+            padding-top: 10px;
+            @media only screen and (max-width: 380px) {
+                margin: 0 5px;
+            }
+        }
+        .subDate {
+            display: inline-flex;
+            font-size: 2.5vw;
+            border-top: 1px solid var(--light-grey);
+            border-bottom: 1px solid var(--light-grey);
+            text-shadow: white 1px 0 2px;
+            @media only screen and (max-width: 380px) {
+                font-size: 15px !important;
+            }
+        }
+        @media only screen and (min-width: 1310px) {
+            .subDate,
+            .numberDate,
+            .smallDate {
+                font-size: 30px !important;
+            }
+        }
+        @media only screen and (max-width: 700px) {
+            margin: 9px;
+        }
+        @media only screen and (max-width: 580px) {
+            font-size: 18px !important;
+            .subDate {
+                font-size: 18px !important;
+            }
         }
     }
 }
@@ -146,5 +138,58 @@
     100% {
         -webkit-transform: scale(1, 1);
         transform: scale(1, 1);
+    }
+}
+
+.saveDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    min-width: 200px;
+    @media only screen and (max-width: 700px) {
+        margin-top: -147px;
+    }
+
+    .calendar {
+        display: flex;
+        padding: 5px;
+        justify-content: space-around;
+        background-color: #fff;
+        box-shadow: 0 0 20px 10px #fff;
+        border-radius: 20px;
+        position: relative;
+        z-index: 30;
+        width: 100%;
+        margin-bottom: 10px;
+
+        .dayDate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 8px 6px;
+            margin: 0 5px;
+            .name {
+                font-family: var(--main-header);
+            }
+            .eventDate {
+                font-weight: bold;
+                color: white;
+            }
+        }
+        .heart {
+            position: absolute;
+            left: calc(50% - 15px);
+            top: 23px;
+            width: 36px;
+            z-index: -1;
+        }
+    }
+    .saveTheDate {
+        color: var(--light-grey);
+        font-family: var(--main-text);
+        margin-bottom: 20px;
     }
 }

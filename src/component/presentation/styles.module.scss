@@ -1,21 +1,18 @@
 @import "../../styles/index.scss";
-.presentation {
-    width: 80%;
-    margin: 80px 20px;
-    padding: 20px 18px;
-    text-align: center;
-    background-color: #d0e8ef82;
-    .presentationAppeal {
-        font-family: var(--main-header);
-        font-size: 26px;
-        margin-bottom: 14px;
-    }
-    .presentationText {
-        color: var(--dark-grey);
-        font-size: 22px;
-        font-family: var(--main-text);
-    }
+.presentationAppeal {
+    font-family: var(--sub-header);
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+.presentationText {
+    color: var(--dark-grey);
+    font-size: 22px;
+    font-family: var(--main-text);
     @media only screen and (max-width: 1024px) {
-        width: 94%;
+        font-size: 20px;
+    }
+    @media only screen and (max-width: 645px) {
+        font-size: 16px;
     }
 }

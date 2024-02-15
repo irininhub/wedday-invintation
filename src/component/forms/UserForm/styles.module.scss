@@ -1,0 +1,16 @@
+.formContainer {
+    margin: 10px 20px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.formControle {
+    margin: 0 24px;
+    max-width: 50%;
+    @media only screen and (max-width: 1024px) {
+        max-width: 75%;
+    }
+    @media only screen and (max-width: 992px) {
+        max-width: calc(100% - 138px);
+    }
+}

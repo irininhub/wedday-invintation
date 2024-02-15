@@ -1,20 +1,16 @@
 import styles from "./styles.module.scss";
 import frameImage from "../../assets/kluax.webp";
-import flowersImage from "../../assets/flowersSmall/tl.webp";
-import coupleImage from "../../assets/couple.webp";
-import daisiesImage from "../../assets/flowersSmall/t14.webp";
+import { BackgroundLayout } from "../../layouts/InvationLayout/background";
+import divider from "../../assets/divider.webp";
+import { SaveDate } from "./saveDate";
 
 export const InvitationHeader = () => {
     return (
-        <div className={styles.invitationHeader}>
-            <img alt="roses" className={styles.flowersImageTop} src={flowersImage} />
-            <img alt="roses" className={styles.flowersImageTop1} src={flowersImage} />
-            <img alt="roses" className={styles.flowersImageTop2} src={daisiesImage} />
-            <img alt="roses" className={styles.flowersImageTop3} src={daisiesImage} />
+        <BackgroundLayout>
             <div className={styles.invitationHeaderContent}>
-                <div className={styles.saveTheDate}>Сохранить дату</div>
+                <SaveDate />
                 <div className={styles.blurredWrapper}>
-                    <img alt="flowers" className={styles.flowersCircle} src={frameImage} />
+                    <img alt="flowers" className={styles.groundCircle} src={frameImage} />
                 </div>
 
                 <div className={styles.newlywedsInfo}>
@@ -30,10 +26,8 @@ export const InvitationHeader = () => {
                         <div className={styles.smallDate}>15:30</div>
                     </div>
                 </div>
+                <img alt="divider" className={styles.flowersImageTop} src={divider} />
             </div>
-            <img alt="roses" className={styles.flowersImageBottom} src={flowersImage} />
-            <img alt="roses" className={styles.flowersImageBottom1} src={flowersImage} />
-            <img alt="bouquet" className={styles.coupleImage} src={coupleImage} />
-        </div>
+        </BackgroundLayout>
     );
 };

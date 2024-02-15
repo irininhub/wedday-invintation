@@ -5,7 +5,8 @@ interface IProps {
     title: string;
     text: string;
     handlerSubmit: () => void | Promise<void>;
-    variant?: "success" | "danger";
+    variant?: "success" | "danger" | "dark";
+    className?: string;
     disabled?: boolean;
 }
 
@@ -14,6 +15,7 @@ export const SubmitButton: FC<IProps> = ({
     text,
     handlerSubmit,
     variant,
+    className = "",
     disabled = false,
 }) => {
     return (
@@ -23,6 +25,7 @@ export const SubmitButton: FC<IProps> = ({
             disabled={disabled}
             handlerSubmit={handlerSubmit}
             variant={variant}
+            className = {className}
         />
     );
 };

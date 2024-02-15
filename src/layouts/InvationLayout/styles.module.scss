@@ -1,3 +1,369 @@
 .invitationLayout {
     overflow-x: hidden;
 }
+
+.background {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: 2s show ease;
+    align-items: center;
+    height: 100vh;
+    .centerFlowers {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media only screen and (max-width: 700px) {
+            top: 18%;
+            width: 75vw;
+            height: 75vw;
+            border-radius: 50%;
+        }
+    }
+    .leavesImageTop {
+        min-width: 240px;
+        position: absolute;
+        transform: rotate(-13deg) scale(1, -1);
+        top: 30%;
+        left: -10%;
+        width: 32%;
+        max-width: 450px;
+    }
+    .flowersImageTop {
+        position: absolute;
+        top: -21%;
+        left: 2%;
+        transform: rotate(-45deg) scale(1, -1);
+        width: 22%;
+        min-width: 220px;
+        max-width: 280px;
+    }
+    .flowersImageTop1 {
+        position: absolute;
+        min-width: 200px;
+        max-width: 370px;
+        top: 11%;
+        transform: rotate(-15deg) scale(-1, -1);
+        left: -11%;
+        width: 30%;
+    }
+    .flowersImageTop3 {
+        position: absolute;
+        min-width: 130px;
+        top: -32px;
+        transform: rotate(114deg);
+        left: -4%;
+        width: 12%;
+        max-width: 220px;
+        z-index: 1;
+    }
+    .flowersImageTop4 {
+        position: absolute;
+        top: 8%;
+        transform: rotate(140deg) scale(1, 1);
+        left: 0;
+        width: 12%;
+        z-index: 0;
+        max-width: 170px;
+        min-width: 80px;
+    }
+    .flowersImageTop5 {
+        position: absolute;
+        left: -18%;
+        width: 22%;
+        transform: rotate(94deg);
+        top: 23%;
+        min-width: 160px;
+        max-width: 300px;
+    }
+    .flowersImageBottom1 {
+        width: 27%;
+        position: absolute;
+        right: -10vw;
+        top: 10%;
+        max-width: 370px;
+        min-width: 170px;
+        transform: rotate(-36deg);
+    }
+    .flowersImageBottom2 {
+        width: 30%;
+        position: absolute;
+        right: -10vw;
+        top: 45%;
+        max-width: 320px;
+        min-width: 170px;
+        transform: rotate(-60deg) scale(-1, 1);
+    }
+    .flowersImageBottom4 {
+        position: absolute;
+        right: -2%;
+        top: -24%;
+        max-width: 150px;
+        min-width: 70px;
+        transform: rotate(-154deg) scale(-1, 1);
+        width: 13%;
+    }
+    .flowersImageBottom5 {
+        position: absolute;
+        right: -4%;
+        top: 39%;
+        max-width: 220px;
+        min-width: 70px;
+        transform: rotate(-152deg);
+        z-index: 1;
+        width: 18%;
+    }
+    .flowersImageBottom {
+        position: absolute;
+        right: -11%;
+        top: -22%;
+        z-index: 0;
+        width: 30%;
+        max-width: 450px;
+        min-width: 200px;
+        transform: rotate(-37deg) scale(-1, 1);
+    }
+    .flowersImageBottom6 {
+        position: absolute;
+        right: -13vw;
+        top: -12%;
+        width: 17%;
+        max-width: 280px;
+        min-width: 120px;
+        transform: rotate(-93deg);
+    }
+    .coupleImage {
+        position: absolute;
+        right: 1vw;
+        bottom: 0;
+        opacity: 0.9;
+        width: 28%;
+        min-width: 200px;
+        z-index: 3;
+        opacity: 1.09;
+        @media only screen and (max-width: 1200px) {
+            width: 37%;
+        }
+        @media only screen and (max-width: 1029px) {
+            right: 0;
+        }
+        @media only screen and (max-width: 992px) {
+            width: 42%;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 55%;
+        }
+        @media only screen and (max-width: 650px) {
+            left: calc(50% - 100px);
+        }
+    }
+    .groundLamps {
+        top: -5vh;
+        left: 51vh;
+        width: 51vw;
+        max-width: 700px;
+        position: absolute;
+        transform: rotate(7deg);
+        @media only screen and (max-width: 1024px) {
+            top: -4vh;
+            left: 30%;
+            width: 66vw;
+            transform: rotate(8deg);
+            min-width: 500px;
+        }
+    }
+    @media only screen and (max-width: 880px) {
+        .flowersImageBottom2 {
+            bottom: 14%;
+        }
+        .flowersImageTop4 {
+            top: 14%;
+        }
+        .flowersImageBottom {
+            top: -18%;
+        }
+    }
+    @media only screen and (max-width: 1260px) {
+        .flowersImageTop5 {
+            top: 29%;
+        }
+        .leavesImageTop {
+            top: 40%;
+        }
+        .flowersImageTop4 {
+            top: -5%;
+        }
+    }
+    @media only screen and (max-width: 1024px) {
+        padding-top: 40px;
+        .flowersCircle {
+            width: 100%;
+        }
+        .newlyweds {
+            font-size: 6.5vw !important;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        height: 95vh;
+        .flowersImageBottom,
+        .flowersImageBottom5,
+        .flowersImageBottom4,
+        .flowersImageBottom2,
+        .flowersImageTop3,
+        .leavesImageTop,
+        .flowersImageTop5,
+        .flowersImageTop4,
+        .flowersImageTop,
+        .flowersImageBottom6,
+        .flowersImageBottom1,
+        .flowersImageTop1 {
+            min-width: unset;
+        }
+        .flowersImageBottom {
+            left: 3%;
+            top: unset;
+            bottom: -28%;
+            width: 36%;
+            transform: rotate(-43deg) scale(-1, 1);
+            z-index: 2;
+        }
+        .flowersImageBottom5 {
+            top: 25%;
+            left: -13%;
+            width: 25%;
+            z-index: 1;
+            transform: rotate(42deg);
+        }
+        .flowersImageBottom4 {
+            right: 19%;
+            top: unset;
+            bottom: -16%;
+            width: 29%;
+            z-index: 2;
+            transform: rotate(91deg);
+        }
+        .flowersImageBottom2 {
+            z-index: 1;
+            left: unset;
+            right: -11%;
+            top: 40%;
+            width: 33%;
+            transform: rotate(24deg);
+        }
+        .flowersImageTop3 {
+            left: 33%;
+            top: unset;
+            bottom: -11%;
+            width: 33%;
+            transform: rotate(-20deg);
+            z-index: 3;
+        }
+        .leavesImageTop {
+            left: -7vw;
+            top: unset;
+            bottom: -6%;
+            width: 33%;
+            transform: rotate(-8deg) scale(-1, 1);
+            z-index: 2;
+        }
+        .flowersImageTop5 {
+            left: 0%;
+            top: 30%;
+            width: 32%;
+            transform: rotate(-58deg);
+            z-index: 1;
+        }
+        .flowersImageTop4 {
+            top: -19%;
+            left: 53%;
+            width: 19%;
+            transform: rotate(-73deg) scale(-1, 1);
+        }
+        .flowersImageTop {
+            top: 3%;
+            left: -8%;
+            width: 27%;
+            transform: rotate(42deg);
+            z-index: 1;
+        }
+        .flowersImageBottom6 {
+            transform: rotate(31deg) scale(-1, 1);
+            right: -6%;
+            top: 12%;
+            width: 33%;
+        }
+        .flowersImageBottom1 {
+            top: -12%;
+            right: 2%;
+            width: 32%;
+            transform: rotate(133deg) scale(1, -1);
+        }
+        .flowersImageTop1 {
+            left: 8%;
+            top: -16%;
+            width: 32%;
+            transform: rotate(49deg) scale(-1, 1);
+        }
+    }
+}
+
+.blueBoxLayout {
+    width: 100%;
+    margin: 0 20px 40px 20px;
+    border-radius: 0 30px 0 30px;
+    padding: 50px 50px 60px 50px;
+    text-align: center;
+    background-color: #eef4fc;
+    position: relative;
+    .blueBoxBefore {
+        left: 20px;
+        top: 20px;
+        position: absolute;
+        border-top: 4px solid white;
+        border-left: 4px solid white;
+        width: 200px;
+        height: 130px;
+    }
+    .blueBoxAfter {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 200px;
+        height: 130px;
+        border-bottom: 4px solid white;
+        border-right: 4px solid white;
+    }
+    @media only screen and (max-width: 1029px) {
+        margin: 0 20px 15px 20px;
+        border-radius: 0 20px 0 20px;
+    }
+    @media only screen and (max-width: 645px) {
+        margin: 0 10px 15px 10px;
+        border-radius: 0 15px 0 15px;
+    }
+}
+.blueBoxLayout::before {
+    content: "";
+    position: absolute;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    top: 30px;
+    left: 30px;
+    width: 160px;
+    height: 90px;
+}
+.blueBoxLayout::after {
+    content: "";
+    position: absolute;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    right: 30px;
+    bottom: 30px;
+    width: 160px;
+    height: 90px;
+}

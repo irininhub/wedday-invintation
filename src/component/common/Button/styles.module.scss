@@ -1,0 +1,15 @@
+.grey,
+.blue {
+    border: none !important;
+    font-weight: bold;
+}
+.grey {
+    background-color: #b5b5b5d7;
+    color: black;
+    --bs-btn-hover-bg: #858585e6;
+    --bs-btn-hover-color: black;
+}
+.blue {
+    background-color: #5d7abc;
+    --bs-btn-hover-bg: #4164b5;
+}

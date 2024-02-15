@@ -1,0 +1,52 @@
+.placeComponent {
+    display: flex;
+    justify-content: center;
+    padding: 0 50px 40px 50px;
+    .placeContainer {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        .title {
+            font-family: var(--sub-header);
+            margin-bottom: 10px;
+        }
+        .placeMark {
+            height: 100px;
+            margin-bottom: 12px;
+        }
+        .placeText {
+            font-size: 19px;
+            text-align: center;
+            font-family: var(--main-text);
+        }
+        .placeTextSmall {
+            margin-top: 10px;
+            text-align: center;
+            color: var(--light-grey);
+            font-family: var(--main-text);
+            font-size: 16px;
+        }
+        .dividerTop {
+            transform: rotate(0deg) scale(1, -1);
+            margin-bottom: 16px;
+        }
+        @media only screen and (max-width: 800px) {
+            width: 100%;
+            .placeText {
+                font-size: 16px;
+            }
+        }
+        @media only screen and (max-width: 1024px) {
+            margin-top: 0;
+            width: 85%;
+            .placeText {
+                font-size: 18px;
+            }
+        }
+    }
+    @media only screen and (max-width: 1024px) {
+        padding: 0 20px 30px 20px;
+    }
+}
