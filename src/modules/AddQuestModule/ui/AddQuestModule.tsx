@@ -22,11 +22,14 @@ export const AddQuestModule: FC = () => {
         },
     });
 
-    const { handleSubmit } = methods;
+    const { handleSubmit, reset } = methods;
     const onSubmit: SubmitHandler<InputsType> = async ({
         onSubmit,
         ...fields
-    }) => addFamily(fields);
+    }) => {
+        await addFamily({ ...fields, surname_id: uuidv4() });
+        return reset();
+    };
 
     return (
         <Container fluid className="h-100 overflow-auto">

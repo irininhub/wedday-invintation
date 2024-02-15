@@ -11,6 +11,11 @@ export const useAddFamily = () => {
             ...fields,
             link: `${window.location.origin}/${fields.surname_id}`,
             status: EStatusInvation.CREATE,
+            form: {
+                eat: [],
+                alcohol: [],
+                other: "",
+            },
         };
         try {
             await addDoc(collection(db, "families"), data);

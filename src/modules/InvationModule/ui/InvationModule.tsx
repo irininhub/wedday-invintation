@@ -15,7 +15,11 @@ import { EStatusInvation, InputsType } from "../../../types";
 import { useLocation } from "react-router-dom";
 import { useGetFamilyById } from "../hooks/useGetFamilyById";
 import { ConditionContainerLayout } from "../../../layouts";
-import { DangerFromText, SuccesFromText, UserFormText } from "../../../constants/Text";
+import {
+    DangerFromText,
+    SuccesFromText,
+    UserFormText,
+} from "../../../constants/Text";
 import { useUpdateFamily } from "../../../hooks/useUpdateFamily";
 import styles from "./styles.module.scss";
 import { BlueBoxLayout } from "../../../layouts/InvationLayout/blueBox";
@@ -44,8 +48,14 @@ export const InvationModule: FC = () => {
     });
 
     const { handleSubmit } = methods;
-    const onSubmit: SubmitHandler<InputsType> = async ({ onSubmit, ...fields }) => {
-        const status: EStatusInvation = color === "success" ? EStatusInvation.RESOLVED : EStatusInvation.REJECTED;
+    const onSubmit: SubmitHandler<InputsType> = async ({
+        onSubmit,
+        ...fields
+    }) => {
+        const status: EStatusInvation =
+            color === "success"
+                ? EStatusInvation.RESOLVED
+                : EStatusInvation.REJECTED;
         setShow(false);
         setText("");
         console.log("fields", fields);
@@ -58,7 +68,9 @@ export const InvationModule: FC = () => {
     }, []);
     useEffect(() => {
         if (!!family.persons) {
-            const fields = family.persons?.map((el) => el as { id: string; name: string });
+            const fields = family.persons?.map(
+                (el) => el as { id: string; name: string },
+            );
             methods.setValue("persons", fields);
             methods.setValue("docId", family.docId as string);
             updateFamily(family.docId as string, {
@@ -86,13 +98,20 @@ export const InvationModule: FC = () => {
                 <TimingInfo />
                 <BlueBoxLayout className="mt-5">
                     <Form.Label className={styles.header}>
-                        <div className={styles.formDescription}>{UserFormText}</div>
+                        <div className={styles.formDescription}>
+                            {UserFormText}
+                        </div>
                     </Form.Label>
                 </BlueBoxLayout>
 
                 <UserForm methods={methods} />
                 <Container fluid className={styles.actionsContainer}>
-                    <SubmitButton className="blue" title="Сохранить данные" text="Мы придем" handlerSubmit={() => handlerSucces("success")} />
+                    <SubmitButton
+                        className="blue"
+                        title="Сохранить данные"
+                        text="Мы придем"
+                        handlerSubmit={() => handlerSucces("success")}
+                    />
 
                     <SubmitButton
                         className="grey"
