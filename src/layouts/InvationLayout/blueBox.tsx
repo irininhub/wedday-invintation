@@ -8,9 +8,11 @@ interface IProps {
 
 export const BlueBoxLayout: FC<IProps> = ({ children, className }) => {
     return (
-        <div className={`${styles.blueBoxLayout} ${className ? className : ''}`}>
+        <div
+            className={`${styles.blueBoxLayout} ${className ? className : ""}`}
+        >
             <div className={styles.blueBoxBefore} />
-            <>{ children }</>
+            <>{children}</>
             <div className={styles.blueBoxAfter} />
         </div>
     );
