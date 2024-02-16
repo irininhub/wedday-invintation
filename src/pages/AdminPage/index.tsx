@@ -1,18 +1,15 @@
 import { FC } from "react";
 import { AdminLayout } from "../../layouts";
-import { useLocation } from "react-router-dom";
 import { AddQuestModule, AnalysisModule } from "../../modules";
 
-export const AdminPage: FC = () => {
-    const locationHash = useLocation().hash;
+interface IProps {
+    addQuest?: boolean;
+}
 
+export const AdminPage: FC<IProps> = ({ addQuest }) => {
     return (
         <AdminLayout>
-            {locationHash === "#add_quest" ? (
-                <AddQuestModule />
-            ) : (
-                <AnalysisModule />
-            )}
+            {addQuest ? <AddQuestModule /> : <AnalysisModule />}
         </AdminLayout>
     );
 };

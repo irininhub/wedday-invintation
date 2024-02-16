@@ -9,6 +9,7 @@ export const Router = (): ReactElement => {
             <Route path={paths.HOME} element={<UserPage />} />
             <Route path={paths.USER} element={<UserPage />} />
             <Route path={paths.ADMIN} element={<AdminPage />} />
+            <Route path={paths.ADD} element={<AdminPage addQuest />} />
         </Switch>
     );
 };

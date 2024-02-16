@@ -1,5 +1,5 @@
 export const EatItems = [
-    { id: 1, value: "Нету" },
+    { id: 1, value: "Нет" },
     { id: 2, value: "Не ем мясо" },
     { id: 3, value: "Не ем рыбу" },
     { id: 4, value: "Вегетарианец" },
