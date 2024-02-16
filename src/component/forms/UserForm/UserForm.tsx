@@ -62,7 +62,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
         <FormProvider {...methods}>
             <Container style={{ margin: "20px 0" }} className={s.formContainer}>
                 <RadioContainer
-                    header="Есть ли у Вас особые предпочтения по еде"
+                    header="Есть ли у Вас особые предпочтения по еде?"
                     items={EatItems}
                     checkedValue={checkedEat}
                     changeForm={(value: boolean, id: string) =>
@@ -72,7 +72,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
             </Container>
             <Container style={{ margin: "20px 0" }} className={s.formContainer}>
                 <RadioContainer
-                    header="Какой алкоголь Вы предпочитаете"
+                    header="Какой алкоголь Вы предпочитаете?"
                     items={AlcoholItems}
                     checkedValue={checkedAlcohol}
                     changeForm={(value: boolean, id: string) =>
@@ -83,7 +83,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
             <Container style={{ margin: "20px 0" }} className={s.formContainer}>
                 <Form.Group className="mb-3 w-100">
                     <Form.Label className={s.header}>
-                        Возможно вы хотите сообщить нам что-то еще
+                        Возможно вы хотите сообщить нам что-то еще?
                     </Form.Label>
                     <Form.Control
                         as="textarea"
@@ -95,7 +95,7 @@ export const UserForm: FC<IProps> = ({ methods }) => {
             </Container>
             {fields.map((field, index) => {
                 return (
-                    <Container key={field.id} className={s.formContainer}>
+                    <Container fluid key={field.id} className={s.formContainer}>
                         <TooltipComponent title="Тут необходимо ввести данные о члене семьи (имя и отчество*)">
                             <Form.Control
                                 placeholder="Введите имя члена семьи"

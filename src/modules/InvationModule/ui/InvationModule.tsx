@@ -25,6 +25,7 @@ import styles from "./styles.module.scss";
 import { BlueBoxLayout } from "../../../layouts/InvationLayout/blueBox";
 import { useLoadScript } from "@react-google-maps/api";
 import { LocationComponent } from "../../../component/location/LocationComponent";
+import divider from "../../../assets/divider.webp";
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
@@ -109,6 +110,7 @@ export const InvationModule: FC = () => {
                 </BlueBoxLayout>
                 <div className={styles.questionnaire}>
                     <h1 className={styles.subHeader}>Анкета для гостей</h1>
+                    <img alt="divider" className="my-2" src={divider} />
 
                     <UserForm methods={methods} />
                     <Container fluid className={styles.actionsContainer}>
