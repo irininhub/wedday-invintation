@@ -30,6 +30,7 @@ import divider from "../../../assets/divider.webp";
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
 export const InvationModule: FC = () => {
+    const [isSuccess, setIsSuccess] = useState(false);
     const [visibleAlert, setVisibleAlert] = useState(false);
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: `${REACT_APP_GOOGLE_API_KEY}`,
@@ -39,7 +40,7 @@ export const InvationModule: FC = () => {
     const [text, setText] = useState("");
     const [color, setColor] = useState<"success" | "danger">("success");
     const { getFamily, family } = useGetFamilyById();
-    const { updateFamily, isSuccess, setIsSuccess } = useUpdateFamily();
+    const { updateFamily } = useUpdateFamily();
 
     const { ...methods } = useForm<InputsType>({
         mode: "onBlur",
@@ -65,6 +66,7 @@ export const InvationModule: FC = () => {
             status,
             form: fields.form,
         });
+        setIsSuccess(true);
         setColor("success");
     };
 

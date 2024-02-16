@@ -14,17 +14,15 @@ type updateDate = {
 };
 
 export const useUpdateFamily = () => {
-    const [isSuccess, setIsSuccess] = useState(false);
     const updateFamily = async (docId: string, date: updateDate) => {
         try {
             await updateDoc(doc(db, "families", docId), {
                 ...date,
             });
-            setIsSuccess(true);
         } catch (error: any) {
             console.log("error", error);
         }
     };
 
-    return { updateFamily, isSuccess, setIsSuccess };
+    return { updateFamily };
 };
