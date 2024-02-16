@@ -21,6 +21,9 @@ body {
             width: 24px;
             height: 24px;
         }
+        .form-check-input:checked[type="checkbox"] {
+            background-color: #5d7abc;
+        }
     }
 }
 #root {

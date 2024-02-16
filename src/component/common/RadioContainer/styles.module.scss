@@ -5,7 +5,7 @@
     .header {
         font-family: var(--main-text);
         font-size: 24px;
-        text-align: center;
+        font-weight: bold;
         @media only screen and (max-width: 1024px) {
             font-size: 20px;
         }
