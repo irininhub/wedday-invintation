@@ -14,6 +14,10 @@ export const useColumns = () => {
         updateFamily(docId, { status: value });
     };
 
+    const copyLink = (docId: string) => {
+        updateFamily(docId, { status: EStatusInvation.SENDED });
+    };
+
     const columns = useMemo<MRT_ColumnDef<FamilyType>[]>(
         () => [
             {
@@ -49,7 +53,14 @@ export const useColumns = () => {
                     if (cell.row.original.name) return;
                     return (
                         <CopyToClipboard text={cell.getValue() as string}>
-                            <Button variant="primary">Copy Link</Button>
+                            <Button
+                                onClick={() =>
+                                    copyLink(cell.row.original?.docId as string)
+                                }
+                                variant="primary"
+                            >
+                                Copy Link
+                            </Button>
                         </CopyToClipboard>
                     );
                 },

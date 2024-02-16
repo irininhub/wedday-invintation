@@ -10,7 +10,7 @@ import {
     PlaceComponent,
     TimingInfo,
 } from "../../../component";
-import { Container, Form } from "react-bootstrap";
+import { Container, Form, Alert } from "react-bootstrap";
 import { EStatusInvation, InputsType, formType } from "../../../types";
 import { useLocation } from "react-router-dom";
 import { useGetFamilyById } from "../hooks/useGetFamilyById";
@@ -30,6 +30,7 @@ import divider from "../../../assets/divider.webp";
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
 export const InvationModule: FC = () => {
+    const [visibleAlert, setVisibleAlert] = useState(false);
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: `${REACT_APP_GOOGLE_API_KEY}`,
     });
@@ -38,7 +39,7 @@ export const InvationModule: FC = () => {
     const [text, setText] = useState("");
     const [color, setColor] = useState<"success" | "danger">("success");
     const { getFamily, family } = useGetFamilyById();
-    const { updateFamily } = useUpdateFamily();
+    const { updateFamily, isSuccess, setIsSuccess } = useUpdateFamily();
 
     const { ...methods } = useForm<InputsType>({
         mode: "onBlur",
@@ -78,9 +79,14 @@ export const InvationModule: FC = () => {
             methods.setValue("form", family.form as formType);
             methods.setValue("persons", fields);
             methods.setValue("docId", family.docId as string);
-            updateFamily(family.docId as string, {
-                status: EStatusInvation.VIEWED,
-            });
+            if (
+                family.status === EStatusInvation.CREATE ||
+                family.status === EStatusInvation.SENDED
+            ) {
+                updateFamily(family.docId as string, {
+                    status: EStatusInvation.VIEWED,
+                });
+            }
         }
     }, [family]);
 
@@ -90,6 +96,18 @@ export const InvationModule: FC = () => {
         setText(text);
         setShow(true);
     };
+
+    const handleVisible = () => {
+        setVisibleAlert(true);
+        setTimeout(() => {
+            setVisibleAlert(false);
+            setIsSuccess(false);
+        }, 4000);
+    };
+
+    useEffect(() => {
+        isSuccess && handleVisible();
+    }, [isSuccess]);
 
     return (
         <Container className={`${styles.wrapper} mb-20`}>
@@ -128,6 +146,13 @@ export const InvationModule: FC = () => {
                             handlerSubmit={() => handlerSucces("danger")}
                             variant="dark"
                         />
+                        <Alert
+                            show={visibleAlert}
+                            variant="success"
+                            className={styles.alert}
+                        >
+                            Данные успешно сохранены. Будем рады Вас видеть!
+                        </Alert>
                         <ModalComponent
                             show={show}
                             text={text}

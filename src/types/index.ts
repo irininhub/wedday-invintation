@@ -8,6 +8,7 @@ export type FamilyType = {
     docId?: string;
     persons?: FamilyType[];
     form?: formType;
+    status?: EStatusInvation;
 };
 
 export enum EStatusInvation {

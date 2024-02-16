@@ -35,4 +35,11 @@
     align-items: center;
     border-radius: 0 30px 0 30px;
     padding: 50px 10px 50px 10px;
+    position: relative;
+}
+.alert {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    max-width: 90%;
 }
