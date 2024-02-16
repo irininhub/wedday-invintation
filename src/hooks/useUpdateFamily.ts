@@ -5,6 +5,11 @@ import { EStatusInvation } from "../types";
 type updateDate = {
     status?: EStatusInvation;
     persons?: Array<{ id: string; name: string }>;
+    form?: {
+        alcohol: string[];
+        eat: string[];
+        other: string;
+    };
 };
 
 export const useUpdateFamily = () => {

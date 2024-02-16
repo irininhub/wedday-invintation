@@ -14,3 +14,14 @@
         max-width: calc(100% - 138px);
     }
 }
+.header {
+    font-family: var(--main-text);
+    font-size: 24px;
+    text-align: center;
+    @media only screen and (max-width: 1024px) {
+        font-size: 20px;
+    }
+    @media only screen and (max-width: 992px) {
+        font-size: 18px;
+    }
+}

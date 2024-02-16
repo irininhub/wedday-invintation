@@ -7,6 +7,7 @@ export type FamilyType = {
     name?: string;
     docId?: string;
     persons?: FamilyType[];
+    form?: formType;
 };
 
 export enum EStatusInvation {
@@ -17,11 +18,11 @@ export enum EStatusInvation {
     REJECTED = "rejected",
 }
 
-type formType = {
-    eat: Array<string>;
+export type formType = {
+    eat: string[];
     alcohol: Array<string>;
     other: string;
-}
+};
 
 export type InputsType = {
     docId: string;

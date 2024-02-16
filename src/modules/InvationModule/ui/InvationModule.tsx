@@ -11,7 +11,7 @@ import {
     TimingInfo,
 } from "../../../component";
 import { Container, Form } from "react-bootstrap";
-import { EStatusInvation, InputsType } from "../../../types";
+import { EStatusInvation, InputsType, formType } from "../../../types";
 import { useLocation } from "react-router-dom";
 import { useGetFamilyById } from "../hooks/useGetFamilyById";
 import { ConditionContainerLayout } from "../../../layouts";
@@ -58,8 +58,11 @@ export const InvationModule: FC = () => {
                 : EStatusInvation.REJECTED;
         setShow(false);
         setText("");
-        console.log("fields", fields);
-        updateFamily(fields.docId, { persons: fields.persons, status });
+        updateFamily(fields.docId, {
+            persons: fields.persons,
+            status,
+            form: fields.form,
+        });
         setColor("success");
     };
 
@@ -71,7 +74,7 @@ export const InvationModule: FC = () => {
             const fields = family.persons?.map(
                 (el) => el as { id: string; name: string },
             );
-            methods.setValue("form", { eat: [], alcohol: [], other: "" })
+            methods.setValue("form", family.form as formType);
             methods.setValue("persons", fields);
             methods.setValue("docId", family.docId as string);
             updateFamily(family.docId as string, {
@@ -104,35 +107,37 @@ export const InvationModule: FC = () => {
                         </div>
                     </Form.Label>
                 </BlueBoxLayout>
-                <h1 className={styles.subHeader}>Анкета для гостей</h1>
+                <div className={styles.questionnaire}>
+                    <h1 className={styles.subHeader}>Анкета для гостей</h1>
 
-                <UserForm methods={methods} />
-                <Container fluid className={styles.actionsContainer}>
-                    <SubmitButton
-                        className="blue"
-                        title="Сохранить данные"
-                        text="Мы придем"
-                        handlerSubmit={() => handlerSucces("success")}
-                    />
+                    <UserForm methods={methods} />
+                    <Container fluid className={styles.actionsContainer}>
+                        <SubmitButton
+                            className="blue"
+                            title="Сохранить данные"
+                            text="Мы придем"
+                            handlerSubmit={() => handlerSucces("success")}
+                        />
 
-                    <SubmitButton
-                        className="grey"
-                        title="Сохранить данные"
-                        text="Не сможем придти"
-                        handlerSubmit={() => handlerSucces("danger")}
-                        variant="dark"
-                    />
-                    <ModalComponent
-                        show={show}
-                        text={text}
-                        color={color}
-                        handlerClose={() => {
-                            setText("");
-                            setShow(false);
-                        }}
-                        handlerSubmit={handleSubmit(onSubmit)}
-                    />
-                </Container>
+                        <SubmitButton
+                            className="grey"
+                            title="Сохранить данные"
+                            text="Не сможем придти"
+                            handlerSubmit={() => handlerSucces("danger")}
+                            variant="dark"
+                        />
+                        <ModalComponent
+                            show={show}
+                            text={text}
+                            color={color}
+                            handlerClose={() => {
+                                setText("");
+                                setShow(false);
+                            }}
+                            handlerSubmit={handleSubmit(onSubmit)}
+                        />
+                    </Container>
+                </div>
             </ConditionContainerLayout>
             <InvitationFooter />
         </Container>

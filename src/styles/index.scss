@@ -6,6 +6,22 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    .form-check {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        font-family: var(--main-text);
+        @media only screen and (max-width: 1024px) {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 992px) {
+            font-size: 18px;
+        }
+        .form-check-input {
+            width: 24px;
+            height: 24px;
+        }
+    }
 }
 #root {
     height: 100%;
