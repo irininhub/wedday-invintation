@@ -9,7 +9,7 @@ export const useAddFamily = () => {
         setLoading(true);
         const data = {
             ...fields,
-            link: `${window.location.origin}/${fields.surname_id}`,
+            link: `${window.location.origin}${window.location.pathname}#${fields.surname_id}`,
             status: EStatusInvation.CREATE,
             form: {
                 eat: [],
