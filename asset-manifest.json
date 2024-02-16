@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wedday-invintation/static/css/main.dfad068c.css",
-    "main.js": "/wedday-invintation/static/js/main.5fdca9ce.js",
+    "main.css": "/wedday-invintation/static/css/main.3dd745a3.css",
+    "main.js": "/wedday-invintation/static/js/main.10c6f916.js",
     "static/media/couple.png": "/wedday-invintation/static/media/couple.9e1f8ea0e6e8ed3db26c.png",
     "static/media/t15.webp": "/wedday-invintation/static/media/t15.d6c9f81fa2773acbacd9.webp",
     "static/media/tl16.webp": "/wedday-invintation/static/media/tl16.239b7f95db55feb0f2a4.webp",
@@ -18,11 +18,11 @@
     "index.html": "/wedday-invintation/index.html",
     "static/media/heart.webp": "/wedday-invintation/static/media/heart.3976bbd5da7f604dbdce.webp",
     "static/media/divider.webp": "/wedday-invintation/static/media/divider.88a5ebec571f0614f183.webp",
-    "main.dfad068c.css.map": "/wedday-invintation/static/css/main.dfad068c.css.map",
-    "main.5fdca9ce.js.map": "/wedday-invintation/static/js/main.5fdca9ce.js.map"
+    "main.3dd745a3.css.map": "/wedday-invintation/static/css/main.3dd745a3.css.map",
+    "main.10c6f916.js.map": "/wedday-invintation/static/js/main.10c6f916.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfad068c.css",
-    "static/js/main.5fdca9ce.js"
+    "static/css/main.3dd745a3.css",
+    "static/js/main.10c6f916.js"
   ]
 }
