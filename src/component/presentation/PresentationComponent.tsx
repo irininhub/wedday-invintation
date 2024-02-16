@@ -20,7 +20,7 @@ export const PresentationComponent: FC<IProps> = ({ persons }) => {
     }, [persons]);
 
     useEffect(() => {
-        const stringForDear = isSeveral ? "Дорогие" : "Дорогая";
+        const stringForDear = isSeveral ? "Дорогие" : "Дорогая/ой";
         setAppeal(stringForDear);
     }, [isSeveral]);
 
@@ -31,9 +31,12 @@ export const PresentationComponent: FC<IProps> = ({ persons }) => {
                     {commonAppeal} {text}!
                 </div>
                 <div className={styles.presentationText}>
-                    Мы рады сообщить {isSeveral ? "Вам" : "тебе"}, что <span>06.07.2024</span> состоится самое главное торжество в нашей жизни - день нашей
-                    свадьбы! Приглашаем
-                    {isSeveral ? " Вас" : " тебя"} разделить с нами радость этого незабываемого дня. И стать свидетелями начала нашего нового путешествия!
+                    Мы рады сообщить {isSeveral ? "Вам" : "тебе"}, что{" "}
+                    <span>06.07.2024</span> состоится самое главное торжество в
+                    нашей жизни - день нашей свадьбы! Приглашаем
+                    {isSeveral ? " Вас" : " тебя"} разделить с нами радость
+                    этого незабываемого дня. И стать свидетелями начала нашего
+                    нового путешествия!
                 </div>
             </>
         </BlueBoxLayout>
