@@ -2,6 +2,7 @@ import { FC } from "react";
 import s from "./styles.module.scss";
 import peopleImg from "../../assets/timing1.webp";
 import ringImg from "../../assets/timing2.webp";
+import dishImg from "../../assets/plate2.webp";
 import plateImg from "../../assets/timing3.webp";
 import clockImg from "../../assets/timing4.webp";
 import divider from "../../assets/divider.webp";
@@ -15,6 +16,12 @@ export const TimingInfo: FC = () => {
             class: "people",
         },
         {
+            time: "15:30",
+            info: "Фуршет",
+            image: plateImg,
+            class: "plate",
+        },
+        {
             time: "16:00",
             info: "Свадебная церемония",
             image: ringImg,
@@ -23,8 +30,8 @@ export const TimingInfo: FC = () => {
         {
             time: "17:00",
             info: "Праздничный банкет",
-            image: plateImg,
-            class: "plate",
+            image: dishImg,
+            class: "clock",
         },
         {
             time: "~00:00",
