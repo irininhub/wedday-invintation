@@ -48,6 +48,31 @@ export const useColumns = () => {
                 },
             },
             {
+                accessorKey: "form",
+                header: "Комментарий",
+                Cell: ({ cell }) => {
+                    return <span>{cell.row.original.form?.other}</span>;
+                },
+            },
+            {
+                accessorKey: "form",
+                header: "Алкоголь",
+                Cell: ({ cell }) => {
+                    return cell.row.original.form?.alcohol.map((el) => (
+                        <p key={el}>{el}</p>
+                    ));
+                },
+            },
+            {
+                accessorKey: "form",
+                header: "Еда",
+                Cell: ({ cell }) => {
+                    return cell.row.original.form?.eat.map((el) => (
+                        <p key={el}>{el}</p>
+                    ));
+                },
+            },
+            {
                 accessorKey: "link",
                 header: "Скопировать приглашение",
                 Cell: ({ cell }) => {
