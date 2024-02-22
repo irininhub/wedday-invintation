@@ -28,6 +28,11 @@ export const useColumns = () => {
             {
                 accessorKey: "name",
                 header: "Имя члена семьи",
+                Cell: ({ cell }) => {
+                    return cell.row.original.persons?.map((el) => (
+                        <p key={el.name}>{el.name}</p>
+                    ));
+                },
             },
             {
                 accessorKey: "status",

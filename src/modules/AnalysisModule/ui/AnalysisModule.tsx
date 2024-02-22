@@ -13,7 +13,6 @@ export const AnalysisModule: FC = () => {
     const table = useMaterialReactTable({
         columns,
         data: families,
-        enableExpanding: true,
         getSubRows: (originalRow) => originalRow.persons,
     });
 
